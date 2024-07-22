@@ -1,0 +1,28 @@
+td, th {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.mat-sort-header-container {
+  justify-content: center !important;
+}
+
+
+.mat-mdc-table {
+  min-width: unset;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.centered {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.button-tweaks {
+    margin: 5px;
+}

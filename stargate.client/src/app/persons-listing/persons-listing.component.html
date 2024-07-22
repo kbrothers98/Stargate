@@ -1,0 +1,41 @@
+<div class="centered">
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Please enter a name" #input>
+  </mat-form-field>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let person">
+      {{person.name}}
+    </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="astronaut">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let person">
+      <button *ngIf="person.astronaut" mat-fab extended
+              class="button-tweaks" aria-label="Visualize" (click)="visualize(person.id)">
+        <img style="width: 25px;" src="space-suit.png" /> Visualize
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let person">
+      <button mat-raised-button class="button-tweaks" aria-label="Edit" (click)="edit(person.id)">Edit</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let person; columns: displayedColumns;"></tr>
+
+  <tr class="mat-row" *matNoDataRow>
+    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+  </tr>
+</table>

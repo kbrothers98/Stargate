@@ -1,0 +1,6 @@
+@Stargate.Server_HostAddress = http://localhost:5145
+
+GET {{Stargate.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

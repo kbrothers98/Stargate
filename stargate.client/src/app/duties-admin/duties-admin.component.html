@@ -1,0 +1,35 @@
+
+<div class="row">
+  <app-duties [displayBack]="false" [requerySubject]="requerySubject"></app-duties>
+</div>
+
+<div class="row">
+  <div class="col">
+    <mat-form-field>
+      <input matInput [(ngModel)]="rank" placeholder="Rank">
+    </mat-form-field>
+  </div>
+
+  <div class="col">
+    <mat-form-field>
+      <input matInput [(ngModel)]="dutyTitle" placeholder="Duty Title">
+    </mat-form-field>
+  </div>
+
+  <div class="col">
+    <mat-form-field>
+      <input matInput [(ngModel)]="startDate" [matDatepicker]="picker" placeholder="Start Date">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <button style="float: left;" color="secondary" mat-raised-button (click)="backClicked()">Back</button>
+  </div>
+  <div class="col">
+    <button style="float: right;" mat-raised-button (click)="add()">Add</button>
+  </div>
+</div>

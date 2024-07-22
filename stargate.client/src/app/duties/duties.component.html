@@ -1,0 +1,16 @@
+<p-timeline [value]="duties">
+  <ng-template pTemplate="content" let-event>
+    {{ event.dutyTitle }}
+    <small class="p-text-secondary">{{ event.dutyStartDate.substring(0, 10) }}</small>
+  </ng-template>
+  <ng-template pTemplate="marker" let-event>
+    <mat-icon aria-hidden="false" fontIcon="keyboard_double_arrow_up"></mat-icon>
+  </ng-template>
+</p-timeline>
+
+<h2 *ngIf="duties.length == 0">No existing duties found</h2>
+
+<div style="float: left;">
+  <button *ngIf="displayBack" mat-raised-button (click)="backClicked()">Back</button>
+</div>
+
